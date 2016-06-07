@@ -176,4 +176,18 @@ describe('async call from node.js to .net', function () {
             done();
         })
     });
+    
+    it('successfuly return a short (Int16)', function (done) {
+ +        var func = edge.func(function () {/*
+ +            async (input) => {
+ +                return (short)1;
+ +            }
+ +        */});
+ +
+ +        func(null, function (error, result) {
+ +            assert.ifError(error);
+ +            assert.ok(result === 1);
+ +            done();
+ +        })
+ +    });
 });
