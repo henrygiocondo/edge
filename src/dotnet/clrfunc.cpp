@@ -182,7 +182,7 @@ v8::Local<v8::Value> ClrFunc::MarshalCLRToV8(System::Object^ netdata)
     }
     else if (type == System::Int16::typeid)
     {
-        jsdata = Nan::New<v8::Integer>((int)netdata);
+        jsdata = Nan::New<v8::Integer>((short)netdata);
     }
     else if (type == System::Int64::typeid)
     {
